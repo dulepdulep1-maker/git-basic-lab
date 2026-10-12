@@ -1,16 +1,127 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Form Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WebBasic</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-container {
+            flex: 1;
+            display: grid;
+            place-items: center;
+            padding: 40px 20px;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            padding: 35px;
+            background: #111c32;
+            border: 1px solid #334155;
+            border-radius: 16px;
+        }
+
+        .login-card h1 {
+            margin-bottom: 12px;
+        }
+
+        .login-card p {
+            color: #a9b6ca;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .login-card label {
+            display: block;
+            margin: 18px 0 8px;
+            font-size: 14px;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            background: #0b1120;
+            color: white;
+            outline: none;
+        }
+
+        .login-card input:focus {
+            border-color: #60a5fa;
+        }
+
+        .login-card .btn-primary {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        .error-message {
+            color: #fca5a5 !important;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 22px;
+            color: #93c5fd;
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Form Login</h1>
 
-    <form>
-    <input type="text" name="user" placeholder="Username">
-    <input type="password" name="pass" placeholder="Password">
-    <button>Logout</button>
-</form>
+    <header class="navbar">
+        <a href="index.html" class="logo">WebBasic<span>.</span></a>
+        <nav>
+            <a href="index.html">Beranda</a>
+        </nav>
+    </header>
+
+    <main class="login-container">
+        <section class="login-card">
+            <h1>Selamat datang!</h1>
+            <p>Masukkan username untuk mencoba fitur login WebBasic.</p>
+
+            <form id="loginForm">
+                <label for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Masukkan username"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Masukkan password"
+                    required
+                >
+
+                <button type="submit" class="btn-primary">
+                    Login Sekarang
+                </button>
+
+                <p id="errorMessage" class="error-message"></p>
+            </form>
+
+            <a href="index.html" class="back-link">
+                &larr; Kembali ke beranda
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Praktikum Pemrograman Berbasis Web</p>
+        <p>© 2026 WebBasic</p>
+    </footer>
+
+    <script src="login.js"></script>
 </body>
 </html>
